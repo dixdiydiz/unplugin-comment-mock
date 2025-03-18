@@ -1,0 +1,7 @@
+packages:
+  - playground
+  - examples/*
+
+
+catalog:
+  react: ^18.3.1
