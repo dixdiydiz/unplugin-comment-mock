@@ -1,7 +1,7 @@
 import type { UnpluginFactory } from "unplugin";
 import { createUnplugin } from "unplugin";
 import { resolveOptions } from "./core/options";
-import { transformComment } from "./core/transform-comment";
+import { transform as coreTransform } from "./core/transform";
 import type { Options } from "./types";
 
 export const unpluginFactory: UnpluginFactory<Options | undefined> = (
@@ -12,7 +12,7 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (
 		resolveOptions(options);
 	},
 	transform(code, id) {
-		return transformComment(code, id);
+		return coreTransform(code, id);
 	},
 });
 

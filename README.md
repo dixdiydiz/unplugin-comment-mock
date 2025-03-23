@@ -122,6 +122,8 @@ commentMock(/* options */)
 
 ## Examples
 
+[`More Example`](./test/transform/transform.test.ts)
+
 - Primitive values are directly replaced
 
 ```ts

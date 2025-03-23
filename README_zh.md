@@ -122,6 +122,8 @@ commentMock(/* options */)
 
 ### 例子
 
+[`更多例子`](./test/transform/transform.test.ts)
+
 - 原始类型会被直接替换
 
 ```ts
