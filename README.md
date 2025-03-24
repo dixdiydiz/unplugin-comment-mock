@@ -28,14 +28,34 @@ npm i unplugin-comment-mock
 // vite.config.ts
 import commentMock from 'unplugin-comment-mock/vite'
 
-export default defineConfig({
-  plugins: [
-    commentMock({ /* options */ }),
-  ],
+export default defineConfig(({ command }) => {
+  const isDev = command === "serve";
+  return {
+    plugins: [
+      isDev ? commentMock({ /* options */ }) : null
+    ].filter(Boolean),
+  }
 })
 ```
 
 Example: [`playground/`](./playground/)
+
+<br></details>
+
+<details>
+<summary>Rspack</summary><br>
+
+```ts
+// rspack.config.ts
+import commentMock from 'unplugin-comment-mock/rspack'
+
+const isDev = process.env.NODE_ENV === "development"
+export default defineConfig({
+  plugins: [
+    isDev ? commentMock({ /* options */ }) : null,
+  ].filter(Boolean),
+})
+```
 
 <br></details>
 
